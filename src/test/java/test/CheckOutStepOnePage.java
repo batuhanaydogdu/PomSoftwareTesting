@@ -12,8 +12,10 @@ public class CheckOutStepOnePage {
     private By postalCodeLocator = By.id("postal-code");
 
     public CheckOutStepOnePage(WebDriver driver){
+
         this.driver=driver;
     }
+
     private CheckOutStepOnePage setFirstName (String firstName){
         WebElement firstNameTextBox = driver.findElement(firstNameLocator);
         firstNameTextBox.sendKeys(firstName);
@@ -32,9 +34,12 @@ public class CheckOutStepOnePage {
     }
 
     public void continueTo(String firstName,String lastName, String postalCode){
-        WebElement contunieButton=driver.findElement(By.className("btn_primary cart_button"));
+        WebElement contunieButton=driver.findElement(By.xpath("//*[contains(@class,'btn_primary cart_button')]"));
+        setFirstName(firstName);
+        setLastName(lastName);
+        setPostalCode(postalCode);
         contunieButton.click();
-        CheckOutStepTwoPage costp=new CheckOutStepTwoPage(driver);
+
 
     }
 

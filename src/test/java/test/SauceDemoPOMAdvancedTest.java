@@ -48,6 +48,7 @@ public class SauceDemoPOMAdvancedTest {
         //go back and add first item
         List<WebElement> productsAfterAdding=inventoryItemPage.goBackInventoryPage().getProductNameLinks();
         productsAfterAdding.get(0).click();
+        inventoryItemPage.addtoCartButtonClick();
 
         // go and check Shopping Cart
         // check if 2 item on the list
@@ -62,7 +63,11 @@ public class SauceDemoPOMAdvancedTest {
 
         //continue checkout
         CheckOutStepOnePage cosop=new CheckOutStepOnePage(driver);
-       // cosop.continueTo();
+        cosop.continueTo("neler","oluyo","postalcodede");
+
+
+        CheckOutStepTwoPage costp=new CheckOutStepTwoPage(driver);
+        costp.clickFinish();
 
 
         // logout

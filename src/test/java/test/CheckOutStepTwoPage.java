@@ -9,11 +9,10 @@ public class CheckOutStepTwoPage {
 
     public CheckOutStepTwoPage(WebDriver driver){
         this.driver=driver;
-        clickFinish();
 
     }
-    private void clickFinish(){
-        WebElement finishButton=driver.findElement(By.className("btn_action cart_button"));
+    public void clickFinish(){
+        WebElement finishButton=driver.findElement(By.xpath("//*[contains(@class,'btn_action cart_button')]"));
         finishButton.click();
     }
 

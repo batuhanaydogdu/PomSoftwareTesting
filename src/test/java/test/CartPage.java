@@ -12,7 +12,7 @@ public class CartPage {
     }
 
     public void checkout(){
-        WebElement checkoutButton=driver.findElement(By.className("btn_action checkout_button"));
+        WebElement checkoutButton=driver.findElement(By.xpath("//*[contains(@class,'btn_action checkout_button')]"));
         checkoutButton.click();
     }
 
