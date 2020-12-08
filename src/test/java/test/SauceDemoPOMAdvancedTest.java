@@ -46,7 +46,7 @@ public class SauceDemoPOMAdvancedTest {
         inventoryItemPage.addtoCartButtonClick();
 
         //go back and add first item
-        List<WebElement> productsAfterAdding=inventoryItemPage.goBackInventoryPage().getProductNameLinks();
+        List<WebElement> productsAfterAdding=inventoryItemPage.goBackInventoryPage().getProductImageLinks();
         productsAfterAdding.get(0).click();
         inventoryItemPage.addtoCartButtonClick();
 

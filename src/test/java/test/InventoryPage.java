@@ -17,6 +17,11 @@ public class InventoryPage {
         List<WebElement> productLinks =  driver.findElements(By.className("inventory_item_name"));
         return productLinks;
     }
+    public List<WebElement> getProductImageLinks(){
+        List<WebElement> productLinks =  driver.findElements(By.className("inventory_item_img"));
+        return productLinks;
+    }
+
 
 
     public InventoryPage listItems(){
