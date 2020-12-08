@@ -12,11 +12,11 @@ import java.util.List;
 public class SauceDemoPOMAdvancedTest {
     WebDriver driver;
     WebDriverWait wait;
-    private String user = "standard_user";
-    private String passwd= "secret_sauce";
+   // private String user = "standard_user";
+    //private String passwd= "secret_sauce";
 
-    @Test
-    public void SauceDemoAddCartAdvanced() throws Exception {
+    @Test(dataProviderClass = DataDrivenSignIn.class,dataProvider = "SignIn_Provider")
+    public void SauceDemoAddCartAdvanced(String user, String passwd) throws Exception {
         System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -76,8 +76,8 @@ public class SauceDemoPOMAdvancedTest {
 
     }
     public static void main(String args[]) throws Exception {
-        SauceDemoPOMAdvancedTest test = new SauceDemoPOMAdvancedTest();
-        test.SauceDemoAddCartAdvanced();
+      //  SauceDemoPOMAdvancedTest test = new SauceDemoPOMAdvancedTest();
+       // test.SauceDemoAddCartAdvanced();
     }
 
 }
