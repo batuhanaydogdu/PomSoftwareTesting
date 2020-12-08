@@ -34,6 +34,8 @@ public class CheckOutStepOnePage {
     public void continueTo(String firstName,String lastName, String postalCode){
         WebElement contunieButton=driver.findElement(By.className("btn_primary cart_button"));
         contunieButton.click();
+        CheckOutStepTwoPage costp=new CheckOutStepTwoPage(driver);
+
     }
 
 }
